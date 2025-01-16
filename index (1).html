@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Pagamento</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/ghostttk/https.frz.com/refs/heads/main/faviconFRZ-removebg-preview.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background-color: #1c1c1e;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #a1a1a6;
+            text-align: justify;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1d9bf0;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .agreement {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #1d9bf0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0d8ae6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Termos de Pagamento</h1>
+        <div class="content">
+            <p>Bem-vindo aos nossos Termos de Pagamento. Ao realizar qualquer transação, você concorda com os seguintes termos:</p>
+
+            <ol>
+                <li><strong>Forma de Pagamento:</strong> Os pagamentos são realizados via PIX utilizando o código fornecido ou o QR code disponibilizado no site.</li>
+                <li><strong>Prazo:</strong> O pagamento deve ser efetuado em até 24 horas após a geração do código PIX.</li>
+                <li><strong>Confirmação:</strong> A confirmação do pagamento será realizada automaticamente após o processamento pelo sistema bancário.</li>
+                <li><strong>Reembolsos:</strong> Reembolsos estão sujeitos às políticas descritas em nosso site oficial.</li>
+                <li><strong>Suporte:</strong> Em caso de dúvidas ou problemas, entre em contato através do link fornecido abaixo.</li>
+            </ol>
+
+            <p>Ao continuar, você confirma que leu e aceitou nossos termos. Obrigado por utilizar nossos serviços!</p>
+        </div>
+        <div class="agreement">
+            <input type="checkbox" id="agree" />
+            <label for="agree">Concordo com os termos de pagamento.</label>
+        </div>
+        <div class="button-container">
+            <button id="confirmButton" disabled>Confirmar</button>
+        </div>
+        <div class="footer">
+            <p>Para suporte ou mais informações, <a href="https://discord.gg/EQexBfYtvD">clique aqui para entrar em contato</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        const agreeCheckbox = document.getElementById('agree');
+        const confirmButton = document.getElementById('confirmButton');
+
+        agreeCheckbox.addEventListener('change', () => {
+            confirmButton.disabled = !agreeCheckbox.checked;
+        });
+
+        confirmButton.addEventListener('click', () => {
+            window.location.href = 'https://www-frz-studio-pagarcombr.vercel.app';
+        });
+    </script>
+</body>
+</html>
